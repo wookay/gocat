@@ -9,7 +9,7 @@ env:
 
 script:
   - go version
-  - go test -v -race TestCases/*.go
+  - go test -v *.go
 
 notifications:
   email: false
