@@ -1,0 +1,15 @@
+language: go
+
+go:
+  - 1.5
+  - tip
+
+env:
+  - GOARCH=amd64
+
+script:
+  - go version
+  - go test TestCases/*.go
+
+notifications:
+  email: false
