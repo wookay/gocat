@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./listdict"
+	"../listdict"
 	"fmt"
 	"reflect"
 	"testing"
