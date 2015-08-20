@@ -1,7 +1,7 @@
 package main
 
 import (
-	"../listdict"
+	// "../listdict"
 	"fmt"
 	"reflect"
 	"testing"
@@ -41,12 +41,12 @@ func TestArray(t *testing.T) {
 	assert_equal("[]interface {}", reflect.TypeOf(a).String())
 }
 
-func TestDict(t *testing.T) {
-	var d = listdict.Dict{"one": 1, "two": 2}
-	assert_equal(1, d["one"])
-	assert_equal(2, d["two"])
-	assert_equal("listdict.Dict", reflect.TypeOf(d).String())
-}
+// func TestDict(t *testing.T) {
+// 	var d = listdict.Dict{"one": 1, "two": 2}
+// 	assert_equal(1, d["one"])
+// 	assert_equal(2, d["two"])
+// 	assert_equal("listdict.Dict", reflect.TypeOf(d).String())
+// }
 
 func TestStruct(t *testing.T) {
 	type ABC struct {
