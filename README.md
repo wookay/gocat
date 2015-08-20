@@ -1,4 +1,7 @@
+# test go lang
 
+Linux, OSX: [![Build Status](https://api.travis-ci.org/wookay/gocat.svg?branch=master)](https://travis-ci.org/wookay/gocat)
+Windows: [![Build status](https://ci.appveyor.com/api/projects/status/epysdl4dds0pyhvn?svg=true)](https://ci.appveyor.com/project/wookay/gocat)
 
 ```shell
 $ go test -v -race TestCases/*.go
