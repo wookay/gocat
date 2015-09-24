@@ -41,6 +41,15 @@ func TestArray(t *testing.T) {
 	assert_equal("[]interface {}", reflect.TypeOf(a).String())
 }
 
+func TestMultiDimensionalArray(t *testing.T) {
+	var a = [][]string{
+		[]string{"a", "b", "c"},
+	}
+	assert_equal("a", a[0][0])
+	assert_equal("b", a[0][1])
+	assert_equal("c", a[0][2])
+}
+
 // func TestDict(t *testing.T) {
 // 	var d = listdict.Dict{"one": 1, "two": 2}
 // 	assert_equal(1, d["one"])
