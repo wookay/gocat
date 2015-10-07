@@ -2,6 +2,8 @@
 
 Linux, OSX: [![Build Status](https://api.travis-ci.org/wookay/gocat.svg?branch=master)](https://travis-ci.org/wookay/gocat)
 Windows: [![Build status](https://ci.appveyor.com/api/projects/status/epysdl4dds0pyhvn?svg=true)](https://ci.appveyor.com/project/wookay/gocat)
+[![Coverage Status](https://coveralls.io/repos/wookay/gocat/badge.svg?branch=master&service=github)](https://coveralls.io/github/wookay/gocat?branch=master)
+
 
 ```shell
 ~/work/gocat master$ go test -v *.go
