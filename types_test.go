@@ -22,6 +22,7 @@ func TestInt(t *testing.T) {
 func TestFloat(t *testing.T) {
 	assert_equal(3.14, 3.14)
 	assert_equal("float64", reflect.TypeOf(3.14).String())
+	assert_equal(true, 0.1 > 0)
 }
 
 func TestString(t *testing.T) {
