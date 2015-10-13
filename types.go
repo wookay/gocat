@@ -1,4 +1,4 @@
-package main
+package gocat
 
-func main() {
+func gocat() {
 }
