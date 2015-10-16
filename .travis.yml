@@ -1,14 +1,16 @@
 language: go
-sudo: false
-go:
-  - 1.5
-  - tip
-
+sudo: required
+dist: trusty
 env:
-  - GOARCH=amd64
+  - GIMME_OS=linux GIMME_ARCH=amd64
+
+install:
+  - go version
+  - go get -d -v ./...
 
 script:
-  - go version
+  - GIMME_GO_VERSION=1.5 gimme --list
+  - go build -v ./...
   - go get golang.org/x/tools/cmd/cover
   - go get github.com/axw/gocov/gocov
   - go get github.com/mattn/goveralls
