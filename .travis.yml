@@ -4,6 +4,9 @@ dist: trusty
 env:
   - GIMME_OS=linux GIMME_ARCH=amd64
 
+go:
+  - 1.5
+
 install:
   - go version
   - go get -d -v ./...
