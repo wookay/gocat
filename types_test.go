@@ -62,3 +62,9 @@ func TestStruct(t *testing.T) {
 	assert.Equal(t, "gocat.ABC", reflect.TypeOf(b).String())
 	assert.Equal(t, "gocat.ABC", reflect.TypeOf(c).String())
 }
+
+func TestFuncOf(t *testing.T) {
+	var k = reflect.TypeOf(0)
+	var e = reflect.TypeOf("")
+	assert.Equal(t, "func(int) string", reflect.FuncOf([]reflect.Type{k}, []reflect.Type{e}, false).String())
+}
