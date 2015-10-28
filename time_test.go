@@ -1,4 +1,4 @@
-package main
+package gocat
 
 import (
 	"github.com/stretchr/testify/assert"
