@@ -18,3 +18,12 @@ func TestRadian(t *testing.T) {
 	assert.Equal(t, math.Pi, deg_to_rad(180))
 	assert.Equal(t, 180.0, rad_to_deg(math.Pi))
 }
+
+func TestSin(t *testing.T) {
+	assert.Equal(t, 1.0, math.Sin(deg_to_rad(90)))
+}
+
+func TestPow(t *testing.T) {
+	assert.Equal(t, 1, 2^3)
+	assert.Equal(t, 8.0, math.Pow(2, 3))
+}
