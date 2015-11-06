@@ -27,3 +27,8 @@ func TestPow(t *testing.T) {
 	assert.Equal(t, 1, 2^3)
 	assert.Equal(t, 8.0, math.Pow(2, 3))
 }
+
+func TestAbs(t *testing.T) {
+	assert.Equal(t, 1.0, math.Abs(-1))
+	assert.Equal(t, 1, int(math.Abs(-1)))
+}

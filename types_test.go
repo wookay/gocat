@@ -11,6 +11,10 @@ func TestGocat(t *testing.T) {
 	assert.Equal(t, nil, nil)
 }
 
+func TestNil(t *testing.T) {
+	assert.Equal(t, nil, reflect.TypeOf(nil))
+}
+
 func TestInt(t *testing.T) {
 	assert.Equal(t, 3, 1+2)
 	assert.Equal(t, "int", reflect.TypeOf(2).String())
