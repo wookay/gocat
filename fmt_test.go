@@ -50,10 +50,10 @@ func (point PointString) fmap(f func(string) float64) [2]float64 {
 func TestParse(t *testing.T) {
 	s := "3.14,3.14"
 	points := strings.Split(s, ",")
-	parse_float := func(value string) float64 {
+	parseFloat := func(value string) float64 {
 		f, _ := strconv.ParseFloat(value, 64)
 		return f
 	}
-	floats := PointString(points).fmap(parse_float)
+	floats := PointString(points).fmap(parseFloat)
 	assert.Equal(t, [2]float64{3.14, 3.14}, floats)
 }

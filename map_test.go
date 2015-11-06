@@ -8,7 +8,7 @@ import (
 
 func keys(m map[string]bool) []string {
 	a := []string{}
-	for key, _ := range m {
+	for key := range m {
 		a = append(a, key)
 	}
 	return a
@@ -30,7 +30,7 @@ type AnyMap map[string]*Any
 
 func (m AnyMap) keys() []string {
 	a := []string{}
-	for key, _ := range m {
+	for key := range m {
 		a = append(a, key)
 	}
 	return a
