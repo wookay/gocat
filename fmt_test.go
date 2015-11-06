@@ -3,7 +3,9 @@ package gocat
 import (
 	"fmt"
 	"github.com/stretchr/testify/assert"
+	//"log"
 	"math"
+	"strconv"
 	"strings"
 	"testing"
 )
@@ -18,26 +20,40 @@ func TestFormattedSlices(t *testing.T) {
 }
 
 type Map interface {
-	fmap(f func(interface{}) string) []string
+	smap(f func(interface{}) string) [2]string
+	fmap(f func(interface{}) float64) [2]float64
 }
 
 type Point [2]float64
 
-func (point Point) fmap(f func(interface{}) string) []string {
-	arr := make([]string, len(point))
-	for idx, value := range point {
-		arr[idx] = f(value)
-	}
-	return arr
+func (point Point) smap(f func(interface{}) string) []string {
+	return []string{f(point[0]), f(point[1])}
 }
 
 func TestPoint(t *testing.T) {
-	point := [2]float64{math.Pi, math.Pi}
+	floats := [2]float64{math.Pi, math.Pi}
 
 	sprint_float := func(value interface{}) string {
 		return fmt.Sprintf("%.2f", value)
 	}
-	a := Point(point).fmap(sprint_float)
+	a := Point(floats).smap(sprint_float)
 	assert.Equal(t, []string{"3.14", "3.14"}, a)
 	assert.Equal(t, "3.14,3.14", strings.Join(a, ","))
+}
+
+type PointString []string
+
+func (point PointString) fmap(f func(string) float64) [2]float64 {
+	return [2]float64{f(point[0]), f(point[1])}
+}
+
+func TestParse(t *testing.T) {
+	s := "3.14,3.14"
+	points := strings.Split(s, ",")
+	parse_float := func(value string) float64 {
+		f, _ := strconv.ParseFloat(value, 64)
+		return f
+	}
+	floats := PointString(points).fmap(parse_float)
+	assert.Equal(t, [2]float64{3.14, 3.14}, floats)
 }
