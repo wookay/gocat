@@ -33,10 +33,10 @@ func (point Point) smap(f func(interface{}) string) []string {
 func TestPoint(t *testing.T) {
 	floats := [2]float64{math.Pi, math.Pi}
 
-	sprint_float := func(value interface{}) string {
+	sprintFloat := func(value interface{}) string {
 		return fmt.Sprintf("%.2f", value)
 	}
-	a := Point(floats).smap(sprint_float)
+	a := Point(floats).smap(sprintFloat)
 	assert.Equal(t, []string{"3.14", "3.14"}, a)
 	assert.Equal(t, "3.14,3.14", strings.Join(a, ","))
 }
