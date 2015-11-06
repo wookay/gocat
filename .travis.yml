@@ -17,6 +17,7 @@ script:
   - go get github.com/axw/gocov/gocov
   - go get github.com/mattn/goveralls
   - go get github.com/stretchr/testify/assert
+  - go get github.com/boltdb/bolt
   - go test -v -covermode=count -coverprofile=coverage.out github.com/wookay/gocat
 
 after_success:
